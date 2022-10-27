@@ -5,6 +5,7 @@ import com.gamify.onboarding.model.Mission;
 import com.gamify.onboarding.dto.UserRequest;
 import com.gamify.onboarding.service.MissionService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,8 +17,8 @@ public class MissionController {
     private MissionService missionService;
 
     @GetMapping
-    public List<Mission> getAllUserMissions(@RequestBody UserRequest request) {
-        return missionService.getAllUserMissions(request.getUsername());
+    public ResponseEntity<List<Mission>> getAllUserMissions(@RequestBody UserRequest request) {
+        return ResponseEntity.ok(missionService.getAllUserMissions(request.getUsername()));
     }
 
     @PutMapping("/start")
