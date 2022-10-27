@@ -36,7 +36,6 @@ public class MyJiraClient {
   }
 
 
-
   public String createIssue(String projectKey, Long issueType, String issueSummary) {
 
     IssueRestClient issueClient = restClient.getIssueClient();
