@@ -1,20 +1,22 @@
 package com.gamify.onboarding.controller;
 
 import com.gamify.onboarding.dto.MissionUpdate;
-import com.gamify.onboarding.model.Mission;
 import com.gamify.onboarding.dto.UserRequest;
+import com.gamify.onboarding.model.Mission;
 import com.gamify.onboarding.service.MissionService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @AllArgsConstructor
-@RestController("/missions")
+@RestController
+@RequestMapping("/missions")
 public class MissionController {
 
-    private MissionService missionService;
+    private final MissionService missionService;
 
     @GetMapping
     public ResponseEntity<List<Mission>> getAllUserMissions(@RequestBody UserRequest request) {
@@ -31,11 +33,8 @@ public class MissionController {
         missionService.updateMissionStatus(id, request.getMissionStatus(), request.getUsername());
     }
 
-    @GetMapping("/current")
+    @GetMapping("current")
     public Mission getCurrentMission(@RequestBody UserRequest request){
         return missionService.getCurrentUserMission(request.getUsername());
     }
-
-
-
 }
