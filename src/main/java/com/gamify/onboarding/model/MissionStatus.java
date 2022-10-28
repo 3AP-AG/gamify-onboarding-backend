@@ -1,5 +1,6 @@
 package com.gamify.onboarding.model;
 
+import java.util.Arrays;
 import lombok.Getter;
 
 @Getter
@@ -13,5 +14,15 @@ public enum MissionStatus {
 
     private MissionStatus(String jiraLabelValue) {
         this.jiraLabelValue = jiraLabelValue;
+    }
+
+    public String getJiraLabelValue() {
+        return jiraLabelValue;
+    }
+
+    public static MissionStatus getMissionStatusByJiraLabel(String jiraLabel){
+        return Arrays.stream(MissionStatus.values())
+            .filter(missionStatus -> missionStatus.jiraLabelValue.equals(jiraLabel))
+            .findFirst().orElse(null);
     }
 }

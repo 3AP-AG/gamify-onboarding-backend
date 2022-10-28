@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class MissionService {
 
-    private final JiraClientServiceOld jiraClientService;
+    private final JiraClientService jiraClientService;
 
     public List<Mission> getAllUserMissions(String username) throws Exception{
 
-        return jiraClientService.getIssuesByUsername(username);
+        return jiraClientService.getAllMissions(username);
 //        Mission mission1 = new Mission("1", "Mission 1", "Description 1", MissionStatus.IN_PROGRESS, 1);
 //        Mission mission2 = new Mission("2", "Mission 2", "Description 2", MissionStatus.IN_PROGRESS, 2);
 //        Mission mission3 = new Mission("3", "Mission 3", "Description 3", MissionStatus.DONE, 3);
@@ -25,7 +25,7 @@ public class MissionService {
     }
 
     public Mission getCurrentUserMission(String username){
-        return new Mission("1", "Mission 1", "Description 1", MissionStatus.IN_PROGRESS, 1);
+        return new Mission("1", "Mission 1", "Description 1", MissionStatus.IN_PROGRESS);
     }
 
     public void startMissions(String username) {
@@ -33,6 +33,6 @@ public class MissionService {
     }
 
     public void updateMissionStatus(String id, MissionStatus missionStatus, String username){
-
+        jiraClientService.updateIssueStatus(id, missionStatus, username);
     }
 }

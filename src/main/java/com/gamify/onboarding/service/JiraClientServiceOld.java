@@ -68,10 +68,7 @@ public class JiraClientServiceOld {
           .map(issue -> new Mission(issue.getKey(),
               issue.getFields().getSummary(),
               issue.getFields().getDescription(),
-              MissionStatus.TODO,
-              //TODO promeni na status
-              Integer.valueOf(issue.getFields().getStatus().getId())
-          ))
+              MissionStatus.TODO))
           .collect(Collectors.toList());
 
 

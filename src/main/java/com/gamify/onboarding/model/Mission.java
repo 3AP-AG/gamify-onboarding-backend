@@ -13,7 +13,5 @@ public class Mission implements Serializable {
     private String title;
     private String description;
     private MissionStatus status;
-    private Integer order;
-
 
 }
