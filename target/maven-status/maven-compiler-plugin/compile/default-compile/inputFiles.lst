@@ -1,0 +1,16 @@
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/service/JiraClientServiceOld.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/model/Issue.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/model/IssueFieldsWrapper.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/model/MissionStatus.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/constants/AppConstant.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/model/Mission.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/model/issueWrapper.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/model/IssueStatusWrapper.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/service/JiraClientConfiguration.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/GamifyOnboardingApplication.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/controller/MissionController.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/service/JiraClientService.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/model/TransitionsWrapper.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/dto/MissionUpdate.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/service/MissionService.java
+/Users/ndjo/Desktop/gamify-onboarding-backend/gamify-onboarding-backend/src/main/java/com/gamify/onboarding/dto/UserRequest.java

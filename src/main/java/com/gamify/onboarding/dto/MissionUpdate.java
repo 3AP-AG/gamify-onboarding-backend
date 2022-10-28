@@ -1,10 +1,14 @@
 package com.gamify.onboarding.dto;
 
 import com.gamify.onboarding.model.MissionStatus;
-import lombok.Value;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class MissionUpdate {
-    String username;
-    MissionStatus missionStatus;
+    private String username;
+    private MissionStatus missionStatus;
 }
