@@ -17,7 +17,7 @@ public class JiraClientConfiguration {
   public JiraClientConfiguration() {
     this.restClient = getJiraRestClient();
     this.username = "nemanja.djokic@3ap.ch";
-    this.password = "uUcBnmOW9YUl4GS2pWLZ74C9";
+    this.password = "UiFzz4vejNhRLLCzTHYi5375";
   }
 
   public JiraRestClient getJiraRestClient() {

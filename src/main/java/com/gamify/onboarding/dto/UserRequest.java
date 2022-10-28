@@ -1,9 +1,12 @@
 package com.gamify.onboarding.dto;
 
-import lombok.Value;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class UserRequest {
-    String username;
-//    String avatarInfo;
+   private String username;
 }

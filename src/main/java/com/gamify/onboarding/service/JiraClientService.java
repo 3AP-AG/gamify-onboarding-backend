@@ -1,16 +1,20 @@
 package com.gamify.onboarding.service;
 
+import static com.gamify.onboarding.constants.AppConstant.PASSWORD;
+import static com.gamify.onboarding.constants.AppConstant.USERNAME;
+import static com.gamify.onboarding.constants.AppConstant.USER_URL;
+
 import com.atlassian.jira.rest.client.api.IssueRestClient;
 import com.atlassian.jira.rest.client.api.JiraRestClient;
-import com.atlassian.jira.rest.client.api.UserRestClient;
 import com.atlassian.jira.rest.client.api.domain.Issue;
 import com.atlassian.jira.rest.client.api.domain.SearchResult;
 import com.atlassian.jira.rest.client.api.domain.Transition;
-import com.atlassian.jira.rest.client.api.domain.User;
 import com.atlassian.jira.rest.client.api.domain.input.TransitionInput;
 import com.gamify.onboarding.constants.AppConstant;
 import com.gamify.onboarding.model.Mission;
 import com.gamify.onboarding.model.MissionStatus;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -38,7 +42,7 @@ public class JiraClientService {
 
   public List<Mission> getAllMissions(String username) throws Exception {
 
-    String accountId = jiraClientServiceOld.getAccountIdByUsername(username); // getUser(username).getAccountId();
+    String accountId = getAccountId(username); // getUser(username).getAccountId();
 
     SearchResult result = jiraRestClient
         .getSearchClient()
@@ -79,17 +83,12 @@ public class JiraClientService {
     return client.getIssue(issueKey).claim();
   }
 
-  public User getUser(String username) {
+  public String getAccountId(String username) throws UnirestException {
 
-    SearchResult result = jiraRestClient
-        .getSearchClient()
-        .searchJql("query=nemanja.djokic@3ap.ch")
-        // AppConstant.PROPERTY_QUERY
-        // + username)
-        .claim();
-
-    UserRestClient client = jiraRestClient.getUserClient();
-    return client.getUser(username).claim();
+    return Unirest.get(USER_URL + username)
+        .basicAuth(USERNAME, PASSWORD)
+        .header("Accept", "application/json")
+        .asJson().getBody().getArray().getJSONObject(0).getString("accountId");
   }
 
 }

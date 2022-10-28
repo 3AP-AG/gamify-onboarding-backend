@@ -1,10 +1,12 @@
 com/gamify/onboarding/model/IssueStatusWrapper.class
 com/gamify/onboarding/model/Mission.class
 com/gamify/onboarding/GamifyOnboardingApplication.class
+com/gamify/onboarding/service/JiraClientServiceOld.class
 com/gamify/onboarding/service/MissionService.class
 com/gamify/onboarding/model/issueWrapper.class
 com/gamify/onboarding/model/TransitionsWrapper.class
 com/gamify/onboarding/model/Issue.class
+com/gamify/onboarding/service/JiraClientConfiguration.class
 com/gamify/onboarding/dto/MissionUpdate.class
 com/gamify/onboarding/controller/MissionController.class
 com/gamify/onboarding/service/JiraClientService.class
