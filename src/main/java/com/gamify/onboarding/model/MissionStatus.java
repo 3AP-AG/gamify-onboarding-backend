@@ -1,5 +1,17 @@
 package com.gamify.onboarding.model;
 
+import lombok.Getter;
+
+@Getter
 public enum MissionStatus {
-    TODO, IN_PROGRESS, DONE
+    BACKLOG("Backlog"),
+    TODO("Selected for Development"),
+    IN_PROGRESS("In Progress"),
+    DONE("Done");
+
+    public final String jiraLabelValue;
+
+    private MissionStatus(String jiraLabelValue) {
+        this.jiraLabelValue = jiraLabelValue;
+    }
 }

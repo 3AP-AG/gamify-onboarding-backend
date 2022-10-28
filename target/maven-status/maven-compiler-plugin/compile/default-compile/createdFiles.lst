@@ -1,0 +1,14 @@
+com/gamify/onboarding/model/IssueStatusWrapper.class
+com/gamify/onboarding/model/Mission.class
+com/gamify/onboarding/GamifyOnboardingApplication.class
+com/gamify/onboarding/service/MissionService.class
+com/gamify/onboarding/model/issueWrapper.class
+com/gamify/onboarding/model/TransitionsWrapper.class
+com/gamify/onboarding/model/Issue.class
+com/gamify/onboarding/dto/MissionUpdate.class
+com/gamify/onboarding/controller/MissionController.class
+com/gamify/onboarding/service/JiraClientService.class
+com/gamify/onboarding/model/IssueFieldsWrapper.class
+com/gamify/onboarding/dto/UserRequest.class
+com/gamify/onboarding/constants/AppConstant.class
+com/gamify/onboarding/model/MissionStatus.class
