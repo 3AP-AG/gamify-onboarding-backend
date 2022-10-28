@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class MissionService {
 
-    private final JiraClientService jiraClientService;
+    private final JiraClientServiceOld jiraClientService;
 
     public List<Mission> getAllUserMissions(String username) throws Exception{
 
