@@ -32,17 +32,14 @@ public class JiraClientService {
 
   private final JiraRestClient jiraRestClient;
 
-  private final JiraClientServiceOld jiraClientServiceOld;
 
-  public JiraClientService(JiraClientConfiguration jiraClientConfiguration,
-      JiraClientServiceOld jiraClientServiceOld) {
+  public JiraClientService(JiraClientConfiguration jiraClientConfiguration) {
     this.jiraRestClient = jiraClientConfiguration.getJiraRestClient();
-    this.jiraClientServiceOld = jiraClientServiceOld;
   }
 
   public List<Mission> getAllMissions(String username) throws Exception {
 
-    String accountId = getAccountId(username); // getUser(username).getAccountId();
+    String accountId = getAccountId(username);
 
     SearchResult result = jiraRestClient
         .getSearchClient()

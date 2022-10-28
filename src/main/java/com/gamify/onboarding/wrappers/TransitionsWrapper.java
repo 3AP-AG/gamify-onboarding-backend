@@ -1,17 +1,21 @@
-package com.gamify.onboarding.model;
+package com.gamify.onboarding.wrappers;
 
 import java.io.Serializable;
+import java.util.LinkedHashMap;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class IssueStatusWrapper implements Serializable {
+public class TransitionsWrapper implements Serializable {
 
-  private String name;
   private String id;
+  private String name;
+  private LinkedHashMap to;
+
 }

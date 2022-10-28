@@ -1,4 +1,4 @@
-package com.gamify.onboarding.model;
+package com.gamify.onboarding.wrappers;
 
 import java.io.Serializable;
 import lombok.AllArgsConstructor;

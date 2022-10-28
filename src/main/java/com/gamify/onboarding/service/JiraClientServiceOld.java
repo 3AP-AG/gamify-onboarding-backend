@@ -4,10 +4,10 @@ import static com.gamify.onboarding.constants.AppConstant.PASSWORD;
 import static com.gamify.onboarding.constants.AppConstant.USERNAME;
 import static com.gamify.onboarding.constants.AppConstant.USER_URL;
 
-import com.gamify.onboarding.model.Issue;
 import com.gamify.onboarding.model.Mission;
 import com.gamify.onboarding.model.MissionStatus;
-import com.gamify.onboarding.model.issueWrapper;
+import com.gamify.onboarding.wrappers.Issue;
+import com.gamify.onboarding.wrappers.issueWrapper;
 import com.mashape.unirest.http.Unirest;
 import java.util.Arrays;
 import java.util.Collections;
