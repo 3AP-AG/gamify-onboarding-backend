@@ -8,7 +8,7 @@ public class AppConstant {
 
   public static final String LABEL_GAMIFY = "gamify";
   public static final String USERNAME = "nemanja.djokic@3ap.ch";
-  public static final String PASSWORD = "vf0o60XZsKZ3OVAULpTf63A4";
+  public static final String PASSWORD = "uUcBnmOW9YUl4GS2pWLZ74C9";
   public static final String OPERATOR_AND = " AND ";
 
 
