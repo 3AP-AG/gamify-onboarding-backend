@@ -13,7 +13,7 @@ public class AppConstant {
 
   public static final String USERNAME = "nemanja.djokic@3ap.ch";
 
-  public static final String PASSWORD = "UiFzz4vejNhRLLCzTHYi5375";
+  public static final String PASSWORD = "NIO41OuucmBKQqoTT0FB2CCA";
   public static final String OPERATOR_AND = " AND ";
 
 }

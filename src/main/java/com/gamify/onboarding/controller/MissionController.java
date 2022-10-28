@@ -39,8 +39,8 @@ public class MissionController {
         missionService.updateMissionStatus(id, request.getMissionStatus(), request.getUsername());
     }
 
-    @GetMapping("current")
-    public Mission getCurrentMission(@RequestParam String username){
+    @GetMapping("/current")
+    public Mission getCurrentMission(@RequestParam String username) throws Exception {
         return missionService.getCurrentUserMission(username);
     }
 }
