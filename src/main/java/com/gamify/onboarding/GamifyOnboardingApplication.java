@@ -17,7 +17,7 @@ public class GamifyOnboardingApplication {
 				.createWithBasicHttpAuthentication(URI.create("https://3apjira.atlassian.net"),
 						"nemanja.djokic@3ap.ch", "MLL6f9VD3ZNZZlwz8nGxFEB3");
 
-		Issue task = (jiraRestClient.getIssueClient()).getIssue("EOS-2").claim();
+		Issue task = jiraRestClient.getIssueClient().getIssue("EOS-2").claim();
 
 
 		System.out.println(task.getId());
