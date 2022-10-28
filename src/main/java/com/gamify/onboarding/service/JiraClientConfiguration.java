@@ -1,30 +1,27 @@
 package com.gamify.onboarding.service;
 
+import static com.gamify.onboarding.constants.AppConstant.BASE_URL;
+import static com.gamify.onboarding.constants.AppConstant.PASSWORD;
+import static com.gamify.onboarding.constants.AppConstant.USERNAME;
+
 import com.atlassian.jira.rest.client.api.JiraRestClient;
 import com.atlassian.jira.rest.client.internal.async.AsynchronousJiraRestClientFactory;
-import com.gamify.onboarding.constants.AppConstant;
 import java.net.URI;
 import org.springframework.context.annotation.Configuration;
-
 @Configuration
 public class JiraClientConfiguration {
-
-  private String username;
-  private String password;
 
   private JiraRestClient restClient;
 
   public JiraClientConfiguration() {
     this.restClient = getJiraRestClient();
-    this.username = "nemanja.djokic@3ap.ch";
-    this.password = "n2phJHCicsDesFV0tF1K0216";
   }
 
   public JiraRestClient getJiraRestClient() {
     return new AsynchronousJiraRestClientFactory()
         .createWithBasicHttpAuthentication(
-            URI.create(AppConstant.BASE_URL),
-            username,
-            password);
+            URI.create(BASE_URL),
+            USERNAME,
+            PASSWORD);
   }
 }
