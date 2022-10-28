@@ -7,14 +7,10 @@ import com.gamify.onboarding.service.MissionService;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/missions")
 public class MissionController {
@@ -22,8 +18,8 @@ public class MissionController {
     private final MissionService missionService;
 
     @GetMapping
-    public ResponseEntity<List<Mission>> getAllUserMissions(@RequestBody UserRequest request) throws Exception{
-        return ResponseEntity.ok(missionService.getAllUserMissions(request.getUsername()));
+    public ResponseEntity<List<Mission>> getAllUserMissions(@RequestParam String username)  throws Exception {
+        return ResponseEntity.ok(missionService.getAllUserMissions(username));
     }
 
     @PutMapping("/start")
@@ -37,7 +33,7 @@ public class MissionController {
     }
 
     @GetMapping("current")
-    public Mission getCurrentMission(@RequestBody UserRequest request){
-        return missionService.getCurrentUserMission(request.getUsername());
+    public Mission getCurrentMission(@RequestParam String username){
+        return missionService.getCurrentUserMission(username);
     }
 }

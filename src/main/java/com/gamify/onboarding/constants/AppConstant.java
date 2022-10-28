@@ -16,7 +16,4 @@ public class AppConstant {
   public static final String PASSWORD = "uUcBnmOW9YUl4GS2pWLZ74C9";
   public static final String OPERATOR_AND = " AND ";
 
-
-
-
 }

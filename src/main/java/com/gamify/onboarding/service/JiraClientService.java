@@ -1,6 +1,5 @@
 package com.gamify.onboarding.service;
 
-
 import com.atlassian.jira.rest.client.api.IssueRestClient;
 import com.atlassian.jira.rest.client.api.JiraRestClient;
 import com.atlassian.jira.rest.client.api.UserRestClient;
@@ -39,28 +38,26 @@ public class JiraClientService {
 
   public List<Mission> getAllMissions(String username) throws Exception {
 
-    String accountId = jiraClientServiceOld.getAccountIdByUsername(username); //getUser(username).getAccountId();
+    String accountId = jiraClientServiceOld.getAccountIdByUsername(username); // getUser(username).getAccountId();
 
     SearchResult result = jiraRestClient
         .getSearchClient()
         .searchJql(
             AppConstant.PROPERTY_ASSIGNEE
-            + accountId
-            + AppConstant.OPERATOR_AND
-            + AppConstant.PROPERTY_LABELS
-            + AppConstant.LABEL_GAMIFY)
+                + accountId
+                + AppConstant.OPERATOR_AND
+                + AppConstant.PROPERTY_LABELS
+                + AppConstant.LABEL_GAMIFY)
         .claim();
 
     Iterable<Issue> issueIterable = () -> result.getIssues().iterator();
 
     return StreamSupport.stream(issueIterable.spliterator(), false)
-        .map(issue ->
-            new Mission(issue.getKey(),
-                issue.getSummary(),
-                issue.getDescription(),
-                MissionStatus.getMissionStatusByJiraLabel(issue.getStatus().getName())
-                )
-        ).collect(Collectors.toList());
+        .map(issue -> new Mission(issue.getKey(),
+            issue.getSummary(),
+            issue.getDescription(),
+            MissionStatus.getMissionStatusByJiraLabel(issue.getStatus().getName())))
+        .collect(Collectors.toList());
   }
 
   public void updateIssueStatus(String issueKey, MissionStatus status, String username) {
@@ -69,13 +66,12 @@ public class JiraClientService {
     Iterable<Transition> transitions = issueClient.getTransitions(issue).claim();
 
     StreamSupport.stream(transitions.spliterator(), false)
-        .filter(x-> x.getName().equals(status.getJiraLabelValue()))
+        .filter(x -> x.getName().equals(status.getJiraLabelValue()))
         .forEach(
             transition -> {
               TransitionInput input = new TransitionInput(transition.getId());
               issueClient.transition(issue, input).claim();
-            }
-        );
+            });
   }
 
   public Issue getIssue(String issueKey) {
@@ -88,10 +84,9 @@ public class JiraClientService {
     SearchResult result = jiraRestClient
         .getSearchClient()
         .searchJql("query=nemanja.djokic@3ap.ch")
-//            AppConstant.PROPERTY_QUERY
-//                + username)
+        // AppConstant.PROPERTY_QUERY
+        // + username)
         .claim();
-
 
     UserRestClient client = jiraRestClient.getUserClient();
     return client.getUser(username).claim();
